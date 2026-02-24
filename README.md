@@ -31,19 +31,19 @@ N = len(data)
 
 lags = range(35)
 
-#Pre-allocate autocorrelation table
+# Pre-allocate autocorrelation table
 autocorr_values = []
 
-#Mean
+# Mean
 mean_data = np.mean(data)
 
-#Variance
+# Variance
 variance_data = np.var(data)
 
-#Normalized data
+# Normalized data
 normalized_data = (data - mean_data) / np.sqrt(variance_data)
 
-#Go through lag components one-by-one
+# Go through lag components one-by-one
 for lag in lags:
     if lag == 0:
         autocorr_values.append(1)
@@ -51,7 +51,7 @@ for lag in lags:
         auto_cov = np.sum((data[:-lag] - mean_data) * (data[lag:] - mean_data)) / N 
         autocorr_values.append(auto_cov / variance_data)  # Normalize by variance
 
-#display the graph
+# display the graph
 plt.figure(figsize=(10, 6))
 plt.stem(lags, autocorr_values)
 plt.title('Autocorrelation of Data')
