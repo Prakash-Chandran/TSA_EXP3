@@ -14,7 +14,7 @@ type to fit the data.
 
 #### Name : Prakash C
 #### Reg.No : 212223240122
-
+```
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -59,6 +59,7 @@ plt.xlabel('Lag')
 plt.ylabel('Autocorrelation')
 plt.grid(True)
 plt.show()
+```
 
 ### OUTPUT:
 
